@@ -1,0 +1,31 @@
+/************************************************
+ * UV-Widget – Kinderdagverblijf De Drie Biggetjes
+ * Stan Wissink (stan@dedriebiggetjeshertme.nl)
+ * V1.0 – Remote script loader
+ ************************************************/
+
+// ===== SCRIPT URL =====
+const SCRIPT_URL = "https://jouw-url-hier.nl/uv-widget.js";
+
+// ===== LADEN EN UITVOEREN =====
+try {
+  const req = new Request(SCRIPT_URL);
+  const code = await req.loadString();
+  eval(code);
+} catch (e) {
+  const widget = new ListWidget();
+  widget.backgroundColor = new Color("#6B7280");
+
+  const titel = widget.addText("⚠️ Script niet geladen");
+  titel.font = Font.boldSystemFont(16);
+  titel.textColor = Color.white();
+
+  widget.addSpacer(6);
+
+  const fout = widget.addText("Controleer de SCRIPT_URL\nof internetverbinding");
+  fout.font = Font.systemFont(13);
+  fout.textColor = Color.white();
+
+  Script.setWidget(widget);
+  Script.complete();
+}
