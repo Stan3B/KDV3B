@@ -31,8 +31,8 @@ await (async () => {
 
     for (let i = 0; i < tijden.length; i++) {
       const tijd = new Date(tijden[i]);
-      const verschil = (tijd - nu) / (1000 * 60);
-      if (verschil >= 0 && verschil <= 60) {
+      const verschil = (tijd - nu) / (1000 * 60); // minuten
+      if (verschil >= -60 && verschil <= 0) {
         waardenKomendUur.push(uvUren[i]);
       }
     }
@@ -52,7 +52,7 @@ await (async () => {
   const widget = new ListWidget();
   widget.setPadding(12, 12, 12, 12);
   widget.url =
-    "https://kdvnet-filepicker-copy.s3.eu-central-1.amazonaws.com/u0AxwcrRhoy4mVJpiYQE_Protocol%2520Preventie%2520zonnebrand%2520%252B%2520hitteprotocol.pdf";
+    "https://dedriebiggetjeshertme.nl/wp-content/uploads/2026/04/Protocol-Preventie-zonnebrand-hitteprotocol.pdf";
 
   // ===== FOUTAFHANDELING =====
   if (uvKomendUur === null || uvMaxVandaag === null) {
