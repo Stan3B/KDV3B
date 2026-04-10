@@ -73,7 +73,7 @@ await (async () => {
 
     Script.setWidget(widget);
     Script.complete();
-    return; // ← werkt nu wel, want we zitten in een functie
+    return; 
   }
 
   // ===== KLEUR + HANDELINGSADVIES =====
