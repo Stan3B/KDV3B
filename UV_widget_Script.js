@@ -101,25 +101,25 @@ await (async () => {
   textContainer.cornerRadius = 10;
   
   const titel = textContainer.addText("☀️ UV index (komend uur)");
-  titel.font = Font.boldSystemFont(GROOT ? 22 : 16);
+  titel.font = Font.boldSystemFont(GROOT ? 22 : 14);
   titel.textColor = Color.white();
-  textContainer.addSpacer(6);
+  textContainer.addSpacer(GROOT ? 6 : 4);
 
   const uvNu = textContainer.addText(`${uvKomendUur.toFixed(1)}`);
-  uvNu.font = Font.boldSystemFont(GROOT ? 56 : 40);
+  uvNu.font = Font.boldSystemFont(GROOT ? 56 : 38);
   uvNu.textColor = Color.white();
 
-  textContainer.addSpacer(6);
+  textContainer.addSpacer(GROOT ? 6 : 4);
 
   const advies = textContainer.addText(adviesTekst);
-  advies.font = Font.boldSystemFont(GROOT ? 22 : 16);
+  advies.font = Font.boldSystemFont(GROOT ? 22 : 14);
   advies.textColor = Color.white();
 
   // ===== ONDERAAN: MAX VAN DE DAG =====
   widget.addSpacer();
 
   const uvDag = widget.addText(`Max UV vandaag: ${uvMaxVandaag.toFixed(1)}`);
-  uvDag.font = Font.boldSystemFont(16);
+  uvDag.font = Font.systemFont(GROOT? 16 : 14);
   uvDag.textColor = new Color("#F9FAFB");
 
   // ===== AFRONDEN =====
