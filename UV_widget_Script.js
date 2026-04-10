@@ -5,6 +5,7 @@ await (async () => {
   const LONGITUDE = 6.779707;
   const INSMEER_DREMPEL = 3;
   const EXTRA_ALERT_DREMPEL = 6;
+  const GROOT = globalThis.WIDGET_SCHAAL !== "klein";
 
   // ===== API =====
   const url =
@@ -98,9 +99,9 @@ await (async () => {
   textContainer.setPadding(8, 8, 8, 8);
   textContainer.backgroundColor = new Color("#000000", 0.12);
   textContainer.cornerRadius = 10;
-
+  
   const titel = textContainer.addText("☀️ UV index (komend uur)");
-  titel.font = Font.boldSystemFont(22);
+  titel.font = Font.boldSystemFont(GROOT ? 22 : 16);
   titel.textColor = Color.white();
   textContainer.addSpacer(6);
 
@@ -110,13 +111,13 @@ await (async () => {
   textContainer.addSpacer(6);
 
   const uvNu = textContainer.addText(`${uvKomendUur.toFixed(1)}`);
-  uvNu.font = Font.boldSystemFont(56);
+  uvNu.font = Font.boldSystemFont(GROOT ? 56 : 40);
   uvNu.textColor = Color.white();
 
   textContainer.addSpacer(6);
 
   const advies = textContainer.addText(adviesTekst);
-  advies.font = Font.boldSystemFont(22);
+  advies.font = Font.boldSystemFont(GROOT ? 22 : 16);
   advies.textColor = Color.white();
 
   // ===== ONDERAAN: MAX VAN DE DAG =====
