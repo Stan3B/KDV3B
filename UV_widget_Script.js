@@ -105,11 +105,6 @@ await (async () => {
   titel.textColor = Color.white();
   textContainer.addSpacer(6);
 
-  const lijn = textContainer.addStack();
-  lijn.size = new Size(0, 1.5);
-  lijn.backgroundColor = new Color("#FFFFFF", 0.4);
-  textContainer.addSpacer(6);
-
   const uvNu = textContainer.addText(`${uvKomendUur.toFixed(1)}`);
   uvNu.font = Font.boldSystemFont(GROOT ? 56 : 40);
   uvNu.textColor = Color.white();
